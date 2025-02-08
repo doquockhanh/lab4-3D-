@@ -1,0 +1,37 @@
+# Thư mục và file của Unity không cần commit
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+
+# Thư mục cache của Visual Studio / Rider
+.vs/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.cache
+*.sln.docstates
+
+# Unity metadata và cache
+*.pidb
+*.pdb
+*.opendb
+*.VC.db
+
+# File hệ thống
+.DS_Store
+Thumbs.db
+
+# Git ignore cho Unity Collaborate
+/Assets/UnityCollaborate/
+
+# Các file cục bộ của hệ điều hành
+*.swp
+*.bak
+*.tmp
+*.log
