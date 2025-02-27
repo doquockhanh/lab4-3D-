@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
     public int damage = 10;
     private Transform target;
 
+    public GameObject explosionPrefab; // Thêm prefab của explosion
+
     public void SetTarget(GameObject enemy)
     {
         target = enemy.transform;
@@ -15,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
         if (target == null)
         {
-            Destroy(gameObject);
+            BulletPool.Instance.ReturnBullet(gameObject);
             return;
         }
 
@@ -24,7 +26,14 @@ public class Bullet : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < 0.2f)
         {
             target.GetComponent<EnemyHealth>().TakeDamage(damage);
-            Destroy(gameObject);
+
+            // Gọi hiệu ứng explosion tại vị trí va chạm
+            if (explosionPrefab != null)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            }
+
+            BulletPool.Instance.ReturnBullet(gameObject); // Hủy viên đạn
         }
     }
 }

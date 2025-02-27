@@ -48,7 +48,9 @@ public class TowerAttack : MonoBehaviour
             rotatingPart.LookAt(target.transform);
         }
 
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        GameObject bullet = BulletPool.Instance.GetBullet();
+        bullet.transform.position = firePoint.position;
+        bullet.transform.rotation = firePoint.rotation;
         bullet.GetComponent<Bullet>().SetTarget(target);
     }
 

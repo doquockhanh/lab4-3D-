@@ -172,3 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   speedMultiplier: 2
+  enemyRenderer: {fileID: 8407245220267136678}
+  hitColor: {r: 1, g: 0, b: 0, a: 1}
+  hitEffectDuration: 0.2
+  hitEffect: {fileID: 3658848738611313526, guid: 48b52695040158f4e8158905095058f2, type: 3}
